@@ -5,6 +5,8 @@ import projImg2 from "../../assets/img/project-img2.png";
 import projImg3 from "../../assets/img/project-img3.png";
 import colorSharp2 from "../../assets/img/color-sharp2.png";
 import "./Projects.scss";
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
 
 function Projects() {
     const projects = [
@@ -40,12 +42,17 @@ function Projects() {
         },
     ];
     return (
-        <section className="project" id="project">
+        <section className="project" id="projects">
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>Some of my latest and most successful projects</p>
+                    <TrackVisibility>
+                        {( {isVisible} ) => 
+                            <div className={isVisible ? "animate__animated animate__bounce" : ""}>
+                                <h2>Projects</h2>
+                                <p>Some of my latest and most successful projects</p>
+                            </div>}
+                       </TrackVisibility>
                         <Tab.Container id="projects-tab" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
@@ -75,8 +82,8 @@ function Projects() {
                                         }
                                     </Row>
                                 </TabPane>
-                                <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
-                                <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
+                                <Tab.Pane eventKey="second">Empty</Tab.Pane>
+                                <Tab.Pane eventKey="third">Empty</Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>
                     </Col>
