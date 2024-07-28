@@ -25,34 +25,19 @@ function Projects() {
             description: "Design & Development",
             imgUrl: projImg3,
         },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
     ];
     return (
         <section className="project" id="projects">
             <Container>
                 <Row>
                     <Col>
-                    <TrackVisibility>
-                        {( {isVisible} ) => 
-                            <div className={isVisible ? "animate__animated animate__bounce" : ""}>
-                                <h2>Projects</h2>
-                                <p>Some of my latest and most successful projects</p>
-                            </div>}
-                       </TrackVisibility>
+                        <TrackVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? "animate__animated animate__bounce" : ""}>
+                                    <h2>Projects</h2>
+                                    <p>Some of my latest and most successful projects</p>
+                                </div>}
+                        </TrackVisibility>
                         <Tab.Container id="projects-tab" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
@@ -73,7 +58,7 @@ function Projects() {
                                         {
                                             projects.map((project, index) => {
                                                 return (
-                                                    <ProjectCard 
+                                                    <ProjectCard
                                                         key={index}
                                                         {...project}
                                                     />
@@ -89,7 +74,7 @@ function Projects() {
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharp2} />
+            <img className="background-image-right" src={colorSharp2} alt="No img" />
         </section>
     );
 }
