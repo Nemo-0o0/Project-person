@@ -25,8 +25,8 @@ function NewsLetter({ onValidated, status, message }) {
         <Col lg={12}>
             <div className="newsletter-bx">
                 <Row>
-                    <Col lg={12} md={6} xl={5}>
-                    <h3>subscribe to our Newsletter</h3>
+                    <Col className="d-flex align-items-center justify-content-center" lg={12} md={6} xl={5}>
+                    <h3 >subscribe to our Newsletter</h3>
                     {status === 'sending' && <Alert>Sending....</Alert>}
                     {status === 'error' && <Alert variant="danger">{message}</Alert>}
                     {status === 'success' && <Alert variant="success">{message}</Alert>}
